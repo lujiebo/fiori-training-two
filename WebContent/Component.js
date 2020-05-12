@@ -8,7 +8,7 @@ sap.ui.define([
 ], function (UIComponent, Device, JSONModel) {
 	"use strict";
 
-	return UIComponent.extend("com.sap.sdrive.ui.fee.Component", {
+	return UIComponent.extend("com.shunyu.lujb.fiori-training-two.Component", {
 
 		metadata: {
 			manifest: "json"

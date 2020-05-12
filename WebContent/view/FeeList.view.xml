@@ -1,5 +1,5 @@
 <mvc:View 
-		controllerName="com.sap.sdrive.ui.fee.controller.FeeList" 
+		controllerName="com.shunyu.lujb.fiori-training-two.controller.FeeList" 
 		xmlns:mvc="sap.ui.core.mvc" 
 		xmlns:core="sap.ui.core" 
 		xmlns:layout="sap.ui.layout" 
@@ -12,7 +12,7 @@
 			<layout:VerticalLayout class="sapUiCompFilterBar" width="100%">
 				<!-- vm:VariantManagement standardItemText="Standard" class="sapUiResponsiveMargin grcFilterBar sapUiCompFilterBar">
 				</vm:VariantManagement -->
-				<fb:FilterBar reset="onReset" clear="onClear" search="onSearch" useToolbar="false" showRestoreButton="false" showClearButton="true" showGoOnFB="true">
+				<fb:FilterBar reset="onReset" clear="onClear" search="onSearch" useToolbar="false" showRestoreButton="true" showClearButton="true" showGoOnFB="true">
 					<fb:filterItems>
 						<fb:FilterItem name="PLATE_NUMBER" label="{i18n>FEE_FILTER_VEHICLE_PLATE_NUMBER}">
 							<fb:control>
@@ -75,7 +75,7 @@
 						<ToolbarSpacer />
 						<Button icon="sap-icon://sort" press="onFeeSortButtonPressed">
 							<layoutData>
-								<OverflowToolbarLayoutData priority="Neverflow" />
+								<OverflowToolbarLayoutData priority="NeverOverflow" />
 							</layoutData>
 						</Button>
 					</OverflowToolbar>
@@ -109,7 +109,7 @@
 				<items>
 					<ColumnListItem data:uuid="{DrivingSafety>UID}" detailPress="onFeeEditPressed">
 						<cells>
-							<Link text="{path:'DrivingSafety>Vehicle/PLATE_NUMBER',type:'sap.ui.model.type.String'}" />
+							<Link text="{path:'DrivingSafety>PLATE_NUMBER',type:'sap.ui.model.type.String'}"/>
 							<ObjectAttribute
 									text="{path:'DrivingSafety>FEE_START_DATE',type:'sap.ui.model.type.Date', formatOptions: {UTC:true, pattern: 'yyyy-MM-dd', strictParsing: true}}"
 							/>

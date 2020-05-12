@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (Controller) {
 	"use strict";
 
-	return Controller.extend("com.sap.sdrive.ui.fee.controller.NotFound", {
+	return Controller.extend("com.shunyu.lujb.fiori-training-two.controller.NotFound", {
 
 		onNavBack: function () {
 			this.getOwnerComponent().getRouter().navto("Home");

@@ -1,11 +1,11 @@
 {
 	"_version": "1.8.0",
 	"sap.app": {
-		"id": "com.sap.sdrive.ui.fee",
+		"id": "com.shunyu.lujb.fiori-training-two",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
-		"title": "{{feeAppTitle}}",
-		"description": "{{feeAppDescription}}",
+		"title": "{{FEE_APP_TITLE}}",
+		"description": "{{FEE_APP_DESCRIPTION}}",
 		"applicationVersion": {
 			"version": "1.0.0"
 		},
@@ -39,7 +39,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "com.sap.sdrive.ui.fee.view.App",
+			"viewName": "com.shunyu.lujb.fiori-training-two.view.App",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -62,7 +62,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "com.sap.sdrive.ui.fee.i18n.i18n"
+					"bundleName": "com.shunyu.lujb.fiori-training-two.i18n.i18n"
 				}
 			},
 			"DrivingSafety": {
@@ -82,7 +82,7 @@
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
 				"async": true,
-				"viewPath": "com.sap.sdrive.ui.fee.view",
+				"viewPath": "com.shunyu.lujb.fiori-training-two.view",
 				"controlId": "rootControl",
 				"controlAggregation": "pages",
 				"bypassed": {

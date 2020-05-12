@@ -5,7 +5,7 @@ sap.ui.define([
 	'sap/m/Button'
 ], function (Controller, History, Dialog, Button) {
 	"use strict";
-	return Controller.extend("com.sap.sdrive.ui.fee.controller.BaseController", {
+	return Controller.extend("com.shunyu.lujb.fiori-training-two.controller.BaseController", {
 		/**
 		 * Convenience method for accessing the router in each controller of the application.
 		 * @public

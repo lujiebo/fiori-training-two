@@ -1,10 +1,9 @@
 sap.ui.define([
-	"com/sap/sdrive/ui/fee/controller/BaseController",
+	"com/shunyu/lujb/fiori-training-two/controller/BaseController",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
-	"sap/ui/model/odata/v2/ODataModel"
-], function(BaseController, JSONModel,  Filter, FilterOperator, ODataModel) {
+], function(BaseController, JSONModel,  Filter, FilterOperator) {
 	"use strict";
 
 	return BaseController.extend("com.sap.sdrive.ui.fee.controller.FeeList", {
@@ -73,63 +72,63 @@ sap.ui.define([
 				
 			if (oSearch.plateNumberKeys && oSearch.plateNumberKeys.length > 0) {
 				for (var i = 0; i < oSearch.plateNumberKeys.length; i ++) {
-					aPlateNumberFilters.push(new sap.ui.model.Filter(
+					aPlateNumberFilters.push(new Filter(
 						"PLATE_NUMBER",
-						sap.ui.model.FilterOperator.EQ,
+						FilterOperator.EQ,
 						oSearch.plateNumberKeys[i]
 					))
 				}
-				aFilterGroups.push(new sap.ui.model.Filter(aPlateNumberFilters, false));
+				aFilterGroups.push(new Filter(aPlateNumberFilters, false));
 			}
 
 			
 
 			if (oSearch.feeStartDateFrom && oSearch.feeStartDateTo) {
-				aFeeStartDateFilters.push(new sap.ui.model.Filter(
+				aFeeStartDateFilters.push(new Filter(
 					"FEE_START_DATE",
-					sap.ui.model.FilterOperator.GE,
+					FilterOperator.GE,
 					oSearch.feeStartDateFrom
 				));
-				aFeeStartDateFilters.push(new sap.ui.model.Filter(
+				aFeeStartDateFilters.push(new Filter(
 					"FEE_START_DATE",
-					sap.ui.model.FilterOperator.LT,
+					FilterOperator.LT,
 					oSearch.feeStartDateTo
 				));
 
-				aFilterGroups.push(new sap.ui.model.Filter(aFeeStartDateFilters, true));
+				aFilterGroups.push(new Filter(aFeeStartDateFilters, true));
 			}
 
 			
 
 			if (oSearch.feeEndDateFrom && oSearch.feeEndDateTo) {
-				aFeeEndDateFilters.push(new sap.ui.model.Filter(
+				aFeeEndDateFilters.push(new Filter(
 					"FEE_END_DATE",
-					sap.ui.model.FilterOperator.GE,
+					FilterOperator.GE,
 					oSearch.feeEndDateFrom
 				));
-				aFeeEndDateFilters.push(new sap.ui.model.Filter(
+				aFeeEndDateFilters.push(new Filter(
 					"FEE_END_DATE",
-					sap.ui.model.FilterOperator.LT,
+					FilterOperator.LT,
 					oSearch.feeEndDateTo
 				));
 
-				aFilterGroups.push(new sap.ui.model.Filter(aFeeEndDateFilters, true));
+				aFilterGroups.push(new Filter(aFeeEndDateFilters, true));
 			}
 
 			
 			if (oSearch.changedOnFrom && oSearch.changedOnTo) {
-				aChangedOnFilters.push(new sap.ui.model.Filter(
+				aChangedOnFilters.push(new Filter(
 					"CHANGED_ON",
-					sap.ui.model.FilterOperator.GE,
+					FilterOperator.GE,
 					oSearch.changedOnFrom
 				));
-				aChangedOnFilters.push(new sap.ui.model.Filter(
+				aChangedOnFilters.push(new Filter(
 					"CHANGED_ON",
-					sap.ui.model.FilterOperator.LT,
+					FilterOperator.LT,
 					oSearch.changedOnTo
 				));
 
-				aFilterGroups.push(new sap.ui.model.Filter(aChangedOnFilters, true));
+				aFilterGroups.push(new Filter(aChangedOnFilters, true));
 			}
 
 			var oBindingItems = this.getView().byId("feeTable").getBinding("items");
