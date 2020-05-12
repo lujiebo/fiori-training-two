@@ -37,7 +37,7 @@
                 <Property Name="CHANGED_BY" Type="Edm.String" MaxLength="50" />
                 <Property Name="FEE_START_DATE" Type="Edm.DateTime" />
                 <Property Name="FEE_END_DATE" Type="Edm.DateTime" />
-                <Property Name="FEE" Type="Edm.Double" />
+                <Property Name="FEE" Type="Edm.Int32" />
                 <Property Name="CURRENCY_CODE" Type="Edm.String" MaxLength="3" />
                 <NavigationProperty Name="Vehicle" Relationship="default.FEE_REF_VEHICLEType" FromRole="FeePrincipal" ToRole="VehicleDependent" />
             </EntityType>
