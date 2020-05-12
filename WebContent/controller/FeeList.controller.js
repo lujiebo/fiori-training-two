@@ -16,7 +16,9 @@ sap.ui.define([
 				feeEndDateFrom: null,
 				feeEndDateTo: null,
 				changedOnFrom: null,
-				changedOnTo: null
+				changedOnTo: null,
+				feeStart: null,
+				feeEnd: null
 			});
 			oSearchModel.setDefaultBindingMode(sap.ui.model.BindingMode.TwoWay);
 			this.setModel(oSearchModel, "searchModel");
@@ -56,7 +58,9 @@ sap.ui.define([
 				feeEndDateFrom: null,
 				feeEndDateTo: null,
 				changedOnFrom: null,
-				changedOnTo: null
+				changedOnTo: null,
+				feeStart: null,
+				feeEnd: null
 			};
 
 			this.getModel("searchModel").setData(oSearch);
@@ -68,7 +72,10 @@ sap.ui.define([
 				aFeeStartDateFilters = [],
 				aFeeEndDateFilters = [],
 				aChangedOnFilters = [],
+				aFeeStartFilters = [],
+				aFeeEndFilters = [],
 				aFilterGroups = [];
+	
 				
 			if (oSearch.plateNumberKeys && oSearch.plateNumberKeys.length > 0) {
 				for (var i = 0; i < oSearch.plateNumberKeys.length; i ++) {
@@ -130,8 +137,28 @@ sap.ui.define([
 
 				aFilterGroups.push(new Filter(aChangedOnFilters, true));
 			}
+			
+			if(Number(oSearch.feeStart)>0){
+				aFeeStartFilters.push(new Filter(
+					"FEE",
+					FilterOperator.GE,
+					oSearch.feeStart
+				));
+				aFilterGroups.push(new Filter(aFeeStartFilters,true));
+			}
+
+			if(oSearch.feeEnd!=null){
+				aFeeEndFilters.push(new Filter(
+					"FEE",
+					FilterOperator.LT,
+					oSearch.feeEnd
+				));
+
+				aFilterGroups.push(new Filter(aFeeEndFilters,true));
+			}
 
 			var oBindingItems = this.getView().byId("feeTable").getBinding("items");
+		
 			if (aFilterGroups && aFilterGroups.length > 0) {
 				var oGroupFilter = new Filter(aFilterGroups, true);
 				oBindingItems.filter(oGroupFilter);
