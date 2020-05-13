@@ -137,8 +137,9 @@ sap.ui.define([
 
 				aFilterGroups.push(new Filter(aChangedOnFilters, true));
 			}
-			
-			if(Number(oSearch.feeStart)>0){
+
+			console.log(oSearch.feeStart)
+			if(oSearch.feeStart!=null){
 				aFeeStartFilters.push(new Filter(
 					"FEE",
 					FilterOperator.GE,
