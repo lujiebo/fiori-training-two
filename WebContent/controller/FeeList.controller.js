@@ -3,7 +3,7 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
-git], function (BaseController, JSONModel, Filter, FilterOperator) {
+], function (BaseController, JSONModel, Filter, FilterOperator) {
 	"use strict";
 
 	return BaseController.extend("com.sap.sdrive.ui.fee.controller.FeeList", {
