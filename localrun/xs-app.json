@@ -20,7 +20,7 @@
         {
             "source": "^/(.*)$",
             "target": "$1",
-            "localDir": "../WebContent",
+            "localDir": "../webapp",
             "authenticationType": "none"
         }
     ]

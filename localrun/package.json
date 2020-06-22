@@ -4,6 +4,6 @@
     "@sap/approuter": "^5"
   },
   "scripts": {
-    "start": "set port=8081&&node node_modules/@sap/approuter"
+    "start": "set port=8084&&node node_modules/@sap/approuter"
   }
 }
